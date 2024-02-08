@@ -1,0 +1,14 @@
+model checkpoint name: 2023-12-02-14-57,   learning rate: 0.001, optimizer:Adam, epochs:200, TrainLoss: 571903.8667330742, TrainDiceScore:0.01817504526115954 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-02-14-57,   learning rate: 0.001, optimizer:Adam, epochs:200, TrainLoss: 636727.843006134, TrainDiceScore:0.008364501438336447 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-02-14-57,   learning rate: 0.001, optimizer:Adam, epochs:200, TrainLoss: 509801.71656036377, TrainDiceScore:0.026012263318989426 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-02-15-00,   learning rate: 0.001, optimizer:Adam, epochs:200, TrainLoss: 412343616.98150194, TrainDiceScore:0.028336357325315475 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-02-15-00,   learning rate: 0.001, optimizer:Adam, epochs:200, TrainLoss: 463415904.7907884, TrainDiceScore:0.008478032890707254 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-16-19-59,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.4417717635631561, TrainDiceScore:0.6791967670122783 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-16-19-59,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.4425057053565979, TrainDiceScore:0.6624956409136454 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-16-19-59,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.5078644335269928, TrainDiceScore:0.5977822005748749 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-19-18-26,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.2604481627543767, TrainDiceScore:0.8017095367113749 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-19-18-26,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.24769609967867534, TrainDiceScore:0.7598274012406667 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-19-18-26,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.21879682342211407, TrainDiceScore:0.8038307905197144 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-19-21-33,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.1267160400748253, TrainDiceScore:0.8756322582562764 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-19-21-33,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.13559585362672805, TrainDiceScore:0.8578543861707052 , loss:weighted cross entropy + 0.01*diceloss
+model checkpoint name: 2023-12-19-21-33,   learning rate: 0.01, optimizer:Adam, epochs:200, TrainLoss: 0.13713959256807964, TrainDiceScore:0.8797334035237631 , loss:weighted cross entropy + 0.01*diceloss

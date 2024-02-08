@@ -1,0 +1,1 @@
+model checkpoint name: 2023-12-03-22-29,   learning rate: 0.001, optimizer:Adam, epochs:10, TrainLoss: 1.8018340269724529, TrainDiceScore:0.014645198597281705 , loss:weighted cross entropy + 0.01*diceloss
