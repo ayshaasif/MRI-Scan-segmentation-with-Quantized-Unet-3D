@@ -1,0 +1,60 @@
+name: Train UNet on RunPod (Manual)
+
+on:
+  workflow_dispatch:   # 🔥 Only runs when you trigger it manually from GitHub Actions
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Start RunPod serverless job
+      - name: Start RunPod Job
+        id: runpod
+        run: |
+          RESPONSE=$(curl -s -X POST "https://api.runpod.io/v2/YOUR-ENDPOINT-ID/run" \
+            -H "Authorization: Bearer ${{ secrets.RUNPOD_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+                  "input": {
+                    "script": "train.py",
+                    "repo_url": "${{ github.repository }}",
+                    "commit_sha": "${{ github.sha }}"
+                  }
+                }')
+
+          echo "response=$RESPONSE" >> $GITHUB_ENV
+          JOB_ID=$(echo $RESPONSE | jq -r '.id')
+          echo "job_id=$JOB_ID" >> $GITHUB_ENV
+
+      # Step 3: Poll for job status
+      - name: Wait for job completion
+        run: |
+          while true; do
+            STATUS=$(curl -s "https://api.runpod.io/v2/YOUR-ENDPOINT-ID/status/${{ env.job_id }}" \
+              -H "Authorization: Bearer ${{ secrets.RUNPOD_API_KEY }}" | jq -r '.status')
+            echo "Job status: $STATUS"
+            if [ "$STATUS" = "COMPLETED" ] || [ "$STATUS" = "FAILED" ]; then
+              break
+            fi
+            sleep 60
+          done
+
+      # Step 4: Download results (e.g. checkpoint file)
+      - name: Get Results
+        run: |
+          curl -s "https://api.runpod.io/v2/YOUR-ENDPOINT-ID/result/${{ env.job_id }}" \
+            -H "Authorization: Bearer ${{ secrets.RUNPOD_API_KEY }}" \
+            -o results.json
+          cat results.json
+
+      # Step 5: Upload checkpoint as artifact (optional)
+      - name: Upload checkpoint
+        uses: actions/upload-artifact@v3
+        with:
+          name: trained-model
+          path: results.json
