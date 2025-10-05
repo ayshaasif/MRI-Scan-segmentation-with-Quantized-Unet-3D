@@ -1,0 +1,12 @@
+*
+!.gitignore
+
+# Allow the folder
+!/CML/
+!/Official_Oct/
+!/.github/workflows/
+
+# Allow Python files inside them
+!/CML/*.py
+!/Official_Oct/*.py
+!/.github/workflows/*.yml
