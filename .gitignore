@@ -1,43 +1,10 @@
-# Jupyter notebooks
-*.ipynb
-.ipynb_checkpoints/
-
-# Machine learning models
-*.h5        # Keras / TensorFlow
-*.hdf5
-*.ckpt      # TensorFlow / PyTorch checkpoints
-*.pth       # PyTorch
-*.pkl       # Scikit-learn / joblib
-*.joblib
-*.onnx      # ONNX format
-*.pb        # TensorFlow protobuf models
-*.tflite    # TensorFlow Lite models
-*.bin       # HuggingFace models
-*.model     # Generic model files
-*.sav       # Pickled models
-*.pyc
-
-# Other large artifacts
-*.npz
-*.npy
-
-
-# Virtual environments
-venv/
-.env/
-.venv/
-env/
-ENV/
-models/
-
-
-# Ignore everything at the root level
-/*
-
-# Except the .gitignore file itself
+*
 !.gitignore
 
-# Un-ignore the specific folder and its contents
-!/CML/*
-!/Official_Oct/*
+# Allow the folder
+!/CML/
+!/Official_Oct/
 
+# Allow Python files inside them
+!/CML/*.py
+!/Official_Oct/*.py

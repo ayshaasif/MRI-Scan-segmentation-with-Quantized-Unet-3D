@@ -231,4 +231,4 @@ if __name__ == "__main__":
     print(train_mri_dataset[0][0].shape, train_mri_dataset[0][1].shape)
 
     train(unet,train_data_loader,number_of_epochs=1,file_name=f'unet3d_{datetime.now().strftime("%Y-%m-%d %H_%M")}.pt',de="cuda")
-    
+
