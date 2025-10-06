@@ -54,7 +54,7 @@ jobs:
 
       # Step 5: Upload checkpoint as artifact (optional)
       - name: Upload checkpoint
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: trained-model
           path: results.json
